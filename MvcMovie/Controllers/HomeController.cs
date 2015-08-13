@@ -1,24 +1,30 @@
-﻿using System.Web;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
 using System.Web.Mvc;
 
 namespace MvcMovie.Controllers
 {
-    public class HelloWorldController : Controller
+    public class HomeController : Controller
     {
-        // 
-        // GET: /HelloWorld/ 
-
-        public string Index()
+        public ActionResult Index()
         {
-            return "This is my <b>default</b> action...";
+            return View();
         }
 
-        // 
-        // GET: /HelloWorld/Welcome/ 
-
-        public string Welcome()
+        public ActionResult About()
         {
-            return "This is the Welcome action method...";
+            ViewBag.Message = "Your application description page.";
+
+            return View();
+        }
+
+        public ActionResult Contact()
+        {
+            ViewBag.Message = "Your contact page.";
+
+            return View();
         }
     }
 }
